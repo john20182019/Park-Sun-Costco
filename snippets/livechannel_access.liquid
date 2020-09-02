@@ -1,0 +1,18 @@
+<script>
+    var cartAttributes = {{ cart.attributes | json }};
+    var transferSession =  sessionStorage.getItem("livechannelTransferID");
+    if (transferSession == null) { 
+        window.location.href = "/pages/not-authorized"; 
+    }
+    else {
+        if (transferSession && !cartAttributes.hasOwnProperty("transferID")) {
+            document.addEventListener("DOMContentLoaded", function(event) { 
+                $.post("/cart/update.js", { 
+                    attributes: {
+                        "livechannelTransferID": transferSession
+                    }
+                });
+            });
+        }
+    }    
+</script>

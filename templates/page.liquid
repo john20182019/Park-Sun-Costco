@@ -1,0 +1,29 @@
+{% if page.handle == 'about' %}
+{% section 'about-page' %}
+{% elsif page.handle == 'contact-us' %}
+{% section 'contact-us-page' %}
+{% elsif page.handle == 'privacy-policy' %}
+{% section 'privacy-policy_' %} 
+{% elsif page.handle == 'terms-of-use' %}
+{% section 'terms' %}
+{% else %}
+<div class="page-width page-content">
+
+  {% include 'breadcrumbs' %}
+
+	<div class="grid">
+    <div class="grid__item medium-up--three-quarters medium-up--push-one-eighth">
+
+      <header class="section-header">
+        <h1 class="section-header__title">{{ page.title }}</h1>
+      </header>
+
+      <div class="rte rte--nomargin">
+        {{ page.content }}
+      </div>
+
+    </div>
+  </div>
+
+</div>
+{% endif %}

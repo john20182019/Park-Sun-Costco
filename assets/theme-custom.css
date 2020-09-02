@@ -1,0 +1,91 @@
+
+
+/* .grid-product__title{
+  font-size:0.9em!important;
+  line-height:1.2em!important;
+} */
+
+.grid-product__price{
+ font-size:0.9em!important; 
+  line-height:1.2em!important;
+}
+
+
+.memberdisclaimer{
+ color:#737373;
+  font-size:0.75em!important;
+  line-height:1.2em!important;
+  padding-bottom:2px;
+}
+
+@media all and (min-width:590px)
+{
+
+.background-media-text__text.larger-text
+{
+width:400px;  
+padding: 40px 0px;
+  
+}
+
+.rte.background-media-text__subtext{
+font-size:1.3em;
+width:400px;
+}
+
+.shopify-section.index-section .section-header{
+ margin-bottom:10px; 
+}
+
+.section-header__title
+{
+ font-size: 1.3em;
+}
+
+.rte.background-media-text__subtext p{
+ font-size:1em; 
+}
+}
+
+@media all and (min-width:768px)
+{
+
+
+  
+  
+}
+
+@media all and (min-width:992px)
+{
+    .background-media-text__text.larger-text
+{
+width:560px;  
+padding: 40px 0px;
+  
+}
+
+.rte.background-media-text__subtext{
+font-size:1.3em;
+width:560px;
+}
+
+  
+}
+
+  @media all and (min-width:1200px)
+{
+      .background-media-text__text.larger-text
+{
+width:630px;  
+padding: 40px 0px;
+  
+}
+  
+ .rte.background-media-text__subtext{
+font-size:1.5em;
+width:630px;
+}
+
+  
+  
+}

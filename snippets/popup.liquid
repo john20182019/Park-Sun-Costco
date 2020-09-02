@@ -1,0 +1,111 @@
+<style>
+  .d-modal-overlay {
+/*     background-color:rgba(0,0,0,.5); 
+    width:100%; 
+    height:100%; 
+    position:fixed; 
+    top:0; 
+    bottom:0; left:0; 
+    right:0; */
+    
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000002;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  .d-modal-dialog.after-open {
+   	top: 50%;
+    opacity: 1; 
+  }
+  .d-modal-dialog {
+    position: absolute;
+    left: 50%;
+    width: 90%;
+    top: 40%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    -webkit-transition: .4s;
+    transition: .4s;
+    display: block;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    max-height: 96%;
+    text-align: center;
+/*     width: 300px; 
+    height: 300px; 
+    background-color: white; 
+    left: 50%; 
+    position: absolute; 
+    transform: translate(-50%); */
+  }
+  
+  .d-modal-content {
+    display: inline-block;
+    max-width: 100%;
+    position: relative;
+    background: #fff;
+    border-radius: .5rem;
+    text-align: left; 
+    padding: 2rem;
+    -webkit-box-sizing: border-box;
+  }
+  
+  #d_modal_title {
+   	font-size: 16px;
+    color: #333;
+    margin: 0 1rem; 
+  }
+  #d_modal_body {
+    font-size: 14px;
+    padding: 1rem;
+    color: #6b6b6b;
+  }
+  #d_modal_buttons {
+    text-align: center;
+    display:none;
+  }
+  #d_modal_close {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #323232;
+    -webkit-transition: 400ms;
+    transition: 400ms;
+    z-index: 1;
+    cursor: pointer;
+    text-align: center;
+  }
+</style>
+
+<div class="d-modal-overlay hidden">
+  <div class="d-modal-dialog">
+    <div class="d-modal-content">
+      <a href="#" id="d_modal_close"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"></path></svg></a>
+      <div id="d_modal_title"></div>
+      <div id="d_modal_body">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="blackout hidden">
+    <div class="popup-window">
+      <div class="jq-text-field">Sample text here Sample text here Sample text here</div>
+    </div>
+  </div> -->
+  
+  <script>
+    //     Modal Show and Hide
+    $('#d_modal_close').on('click', function(){
+      	$('.d-modal-dialog').removeClass('after-open');
+    	$('.d-modal-overlay').addClass('hidden');
+    });
+  </script>

@@ -1,0 +1,115 @@
+<div class="banner-image"><img src="{{ section.settings.banner | img_url: 'master' }}" alt="{{ section.settings.banner.alt }}"></div>
+<h1 class="title">Contact Us</h1>
+<div class="sub-title">{{ section.settings.subtitle }}</div>
+
+<div class="grey-content-wrapper grid">
+  <dl class="inquiries grid__item medium-up--one-half">
+    <div class="extra-title">{{ section.settings.extra-title-1 }}</div>
+    <div>{{ section.settings.csi-content }}</div>
+    <div class="extra-title emailus">{{ section.settings.extra-title-2 }}</div>
+    <div><a href="mailto:{{ section.settings.email-address }}" aria-label="Email Us">{{ section.settings.email-address }}</a></div>
+    <div class="extra-title emailus">{{ section.settings.extra-title-4 }}</div>
+    <div>{{ section.settings.returns-content }}</div>
+  </dl>
+  <dl class="call-us grid__item medium-up--one-half">
+    <dt class="extra-title">{{ section.settings.extra-title-3 }}</dt>
+    {% for block in section.blocks %}
+    <dd><span class="span1">{{ block.settings.country }}</span><span class="span2"><a class="telephone-link-1" href="tel:{{ block.settings.number-for-link }}">{{block.settings.number}}</a></span><span class="span3">{{ block.settings.hours }}</span></dd>
+    {% endfor %}
+<!--     <dd><span class="span1">US</span><span class="span2"><a class="telephone-link-1" href="tel:18009887973">+1 (800) 988 7973</a></span><span class="span3">Mon-Fri 9AM-5PM (PT)</span></dd> -->
+<!--     <dd><span class="span1">UK</span><span><a class="span2" href="tel:4401604936200">+44 (0) 1604 936 200</a></span><span class="span3">Mon-Fri 6AM-11AM (GMT)</span></dd> -->
+<!--     <dd><span class="span1">DE</span><span><a class="span2" href="tel:4906995797960">+49 (0) 69 9579 7960</a></span><span class="span3">Mon-Fri 6AM-11AM</span></dd>
+    <dd><span class="span1">JP</span><span><a class="span2" href="tel:810344557823">+81 03 4455 7823</a></span><span class="span3">Mon-Fri 9AM-5PM</span></dd>
+    <dd><span class="span1">CN</span><span><a class="span2" href="tel:864000550036">+86 400 0550 036</a></span><span class="span3">Mon-Fri 9AM-5:30PM</span></dd>
+    <dd><span class="span1">UAE</span><span><a class="span2" href="tel:9718000320817">+971 8000320817</a></span><span class="span3">(Arabic&English) Sun-Thu 8AM-4:30PM (GMT+4)</span></dd>
+    <dd><span class="span1">KSA</span><span><a class="span2" href="tel:9668008500030">+966 8008500030</a></span><span class="span3">(Arabic&English) Sun-Thu 8AM-4:30PM (GMT+3)</span></dd>
+    <dd><span class="span1">KW</span><span><a class="span2" href="tel:96522069086">+965 22069086</a></span><span class="span3">(Arabic&English) Sun-Thu 8A-4:30PM (GMT+3)</span></dd> -->
+  </dl>
+</div>
+{% schema %}
+  {
+    "name": "Contact Us Page",
+	"class":"contact-us-page",
+    "settings": [
+		{
+			"type":"image_picker",
+			"id":"banner",
+			"label":"Banner Image"
+		},
+		{
+			"type":"text",
+			"id":"subtitle",
+			"label":"Subtitle"
+		},
+		{
+			"type":"text",
+			"id":"extra-title-1",
+			"label":"Customer Service Inquiries Title"
+		},
+		{
+			"type":"textarea",
+			"id":"csi-content",
+			"label":"Customer Service Inquiries Content"
+		},
+		{
+			"type":"text",
+			"id":"extra-title-2",
+			"label":"Email Us Title"
+		},
+		{
+			"type":"text",
+			"id":"email-address",
+			"label":"Email Address"
+		},
+		{
+			"type":"text",
+			"id":"extra-title-4",
+			"label":"Returns Title"
+		},
+		{
+			"type":"textarea",
+			"id":"returns-content",
+			"label":"Returns Content"
+		},
+		{
+			"type":"text",
+			"id":"extra-title-3",
+			"label":"Call Us Title"
+		}
+				],
+	"blocks":[
+		{
+			"type":"numbers",
+			"name":"Phone Numbers",
+			"settings":[
+				{
+					"type":"text",
+					"id":"country",
+					"label":"Country Abbreviation"
+				},
+				{
+					"type":"text",
+					"id":"number",
+					"label":"Phone Number"
+				},
+				{
+					"type":"text",
+					"id":"number-for-link",
+					"label":"Number for Link (NO SPACES OR CHARACTERS)"
+				},
+				{
+					"type":"text",
+					"id":"hours",
+					"label":"Hours of Operation"
+				}
+					   ]
+		}
+			 ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,43 @@
+<div class="product-grid-wrapper grid">
+  {% for product in collections.all.products %}
+  <div class="product-grid-item grid__item grid-product medium-up--one-half">
+    <a class="product-grid-link" href="{{ product.url }}" aria-label="{{ product.title }} link">
+      <div class="grid-square grid">
+        <div class="featured-image grid__item medium-up--one-half"><img src="{{ product.featured_image | img_url: '250x' }}" alt="{{ product.title }}"></div>
+        <div class="product-content-wrapper grid__item medium-up--one-half">
+          <div class="product-title">{{ product.title }}</div>
+          <div class="product-description">{{ product.description | split: '|shortdesc|' | last }}</div>
+          <div class="product-price">{{ product.price | money }}</div>
+          <div class="button-normal yellow">Learn More</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+<div class="disclaimer">{{ section.settings.disclaimer }}</div>
+{% schema %}
+  {
+    "name": "Product Grid",
+	"class":"product-grid",
+    "settings": [
+		{
+			"type":"textarea",
+			"id":"disclaimer",
+			"label":"Disclaimer"
+		}
+				],
+	"presets":[
+		{
+			"category":"products",
+			"name":"Product Grid"
+		}
+			  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

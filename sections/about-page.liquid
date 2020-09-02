@@ -1,0 +1,72 @@
+<div class="top-banner" role="img" aria-label="" style=" background-image:url({{ section.settings.top-banner | img_url: 'master' }}); background-position:bottom center; background-size:cover; background-repeat:no-repeat;height:550px; ">
+  <div class="content-wrapper">
+    <h1 class="title">{{ section.settings.title }}</h1>
+    <hr>
+    <div class="copy">{{ section.settings.copy }}</div>
+	
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "About Page",
+	"class":"about-page",
+    "settings": [
+		{
+			"type":"image_picker",
+			"id":"top-banner",
+			"label":"Top Banner Image"
+		},
+		{
+			"type":"text",
+			"id":"title",
+			"label":"Main Title"
+		},
+		{
+			"type":"textarea",
+			"id":"copy",
+			"label":"Copy"
+		},
+		{
+			"type":"image_picker",
+			"id":"bottom-banner",
+			"label":"Bottom Banner Image"
+		},
+		{
+			"type":"image_picker",
+			"id":"logo-image",
+			"label":"Logo"
+		},
+		{
+			"type":"textarea",
+			"id":"bottom-copy",
+			"label":"Copy"
+		},
+		{
+			"type":"image_picker",
+			"id":"item-image",
+			"label":"Item Image"
+		}
+				],
+	"blocks":[
+		{
+			"type":"sponsors",
+			"name":"sponsors",
+			"limit":5,
+			"settings":[
+				{
+					"type":"image_picker",
+					"id":"image",
+					"label":"Sponsor Image"
+				}
+					   ]
+		}
+			 ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
